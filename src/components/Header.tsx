@@ -14,11 +14,11 @@ const Header = () => {
   const cartCount = getCartCount();
   
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Women", href: "/products?category=Women" },
-    { name: "Men", href: "/products?category=Men" },
-    { name: "Kids", href: "/products?category=Kids" },
-    { name: "Contact", href: "/contact" },
+    { name: "Գլխավոր", href: "/" },
+    { name: "Կանայք", href: "/products?category=Women" },
+    { name: "Տղամարդիկ", href: "/products?category=Men" },
+    { name: "Երեխաներ", href: "/products?category=Kids" },
+    { name: "Կապ", href: "/contact" },
   ];
 
   const isActive = (href: string) => {
@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="text-xl font-light tracking-wider">
-            MILENA'S BOUTIQUE
+            ՄԻԼԵՆԱՅԻ ԲՈՒՏԻԿ
           </Link>
 
           {/* Desktop Navigation */}

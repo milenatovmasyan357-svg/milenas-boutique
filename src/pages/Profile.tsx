@@ -60,24 +60,24 @@ const Profile = () => {
       <div className="container-custom py-12">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-light">My Account</h1>
+            <h1 className="text-3xl font-light">Իմ էջը</h1>
             <Button variant="outline" onClick={logout}>
-              Logout
+              Ելք
             </Button>
           </div>
 
           <Tabs defaultValue="profile" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="profile">Profile</TabsTrigger>
-              <TabsTrigger value="orders">Order History</TabsTrigger>
+              <TabsTrigger value="profile">Անձնական տվյալներ</TabsTrigger>
+              <TabsTrigger value="orders">Պատվերների պատմություն</TabsTrigger>
             </TabsList>
 
             <TabsContent value="profile">
               <div className="border border-border p-6 bg-card">
-                <h2 className="text-xl font-light mb-6">Personal Information</h2>
+                <h2 className="text-xl font-light mb-6">Անձնական տվյալներ</h2>
                 <form onSubmit={handleUpdateProfile} className="space-y-4">
                   <div>
-                    <Label htmlFor="name">Full Name</Label>
+                    <Label htmlFor="name">Անուն Ազգանուն</Label>
                     <Input
                       id="name"
                       value={profileData.name}
@@ -87,7 +87,7 @@ const Profile = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">Էլ․ փոստ</Label>
                     <Input
                       id="email"
                       type="email"
@@ -98,7 +98,7 @@ const Profile = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="phone">Phone</Label>
+                    <Label htmlFor="phone">Հեռախոս</Label>
                     <Input
                       id="phone"
                       type="tel"
@@ -109,7 +109,7 @@ const Profile = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="address">Address</Label>
+                    <Label htmlFor="address">Հասցե</Label>
                     <Input
                       id="address"
                       value={profileData.address}
@@ -119,7 +119,7 @@ const Profile = () => {
                     />
                   </div>
                   <Button type="submit" className="btn-primary">
-                    Update Profile
+                    Թարմացնել էջը
                   </Button>
                 </form>
               </div>
@@ -134,9 +134,9 @@ const Profile = () => {
                   >
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <p className="font-medium">Order #{order.id}</p>
+                        <p className="font-medium">Պատվեր #{order.id}</p>
                         <p className="text-sm text-muted-foreground">
-                          {new Date(order.date).toLocaleDateString()}
+                          {new Date(order.date).toLocaleDateString('hy-AM')}
                         </p>
                       </div>
                       <span className="px-3 py-1 text-xs bg-muted rounded-full">
@@ -146,12 +146,12 @@ const Profile = () => {
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="text-sm text-muted-foreground">
-                          {order.items} {order.items === 1 ? "item" : "items"}
+                          {order.items} {order.items === 1 ? "ապրանք" : "ապրանք"}
                         </p>
                         <p className="font-medium">${order.total.toFixed(2)}</p>
                       </div>
                       <Button variant="outline" size="sm">
-                        View Details
+                        Տեսնել մանրամասները
                       </Button>
                     </div>
                   </div>

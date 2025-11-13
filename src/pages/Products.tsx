@@ -12,14 +12,21 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || "All");
   const [sortBy, setSortBy] = useState<string>("newest");
 
-  const categories = ["All", "Women", "Men", "Kids"];
+  const categories = ["Բոլորը", "Կանայք", "Տղամարդիկ", "Երեխաներ"];
+  const categoryMapping: Record<string, string> = {
+    "Բոլորը": "All",
+    "Կանայք": "Women",
+    "Տղամարդիկ": "Men",
+    "Երեխաներ": "Kids"
+  };
 
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = mockProducts;
 
     // Filter by category
-    if (selectedCategory !== "All") {
-      filtered = filtered.filter((p) => p.category === selectedCategory);
+    const englishCategory = categoryMapping[selectedCategory] || selectedCategory;
+    if (englishCategory !== "All") {
+      filtered = filtered.filter((p) => p.category === englishCategory);
     }
 
     // Sort products
@@ -43,10 +50,11 @@ const Products = () => {
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    if (category === "All") {
+    const englishCategory = categoryMapping[category] || category;
+    if (englishCategory === "All") {
       searchParams.delete("category");
     } else {
-      searchParams.set("category", category);
+      searchParams.set("category", englishCategory);
     }
     setSearchParams(searchParams);
   };
@@ -56,9 +64,9 @@ const Products = () => {
       <div className="container-custom py-12">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-light mb-2">All Products</h1>
+          <h1 className="text-3xl font-light mb-2">Բոլոր ապրանքները</h1>
           <p className="text-muted-foreground">
-            {filteredAndSortedProducts.length} {filteredAndSortedProducts.length === 1 ? 'product' : 'products'}
+            {filteredAndSortedProducts.length} {filteredAndSortedProducts.length === 1 ? 'ապրանք' : 'ապրանք'}
           </p>
         </div>
 
@@ -80,16 +88,16 @@ const Products = () => {
 
           {/* Sort */}
           <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">Sort by:</span>
+            <span className="text-sm text-muted-foreground">Տեսակավորել՝</span>
             <Select value={sortBy} onValueChange={setSortBy}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="newest">Newest</SelectItem>
-                <SelectItem value="price-low">Price: Low to High</SelectItem>
-                <SelectItem value="price-high">Price: High to Low</SelectItem>
-                <SelectItem value="name">Name</SelectItem>
+                <SelectItem value="newest">Նորագույն</SelectItem>
+                <SelectItem value="price-low">Գին՝ Ցածրից բարձր</SelectItem>
+                <SelectItem value="price-high">Գին՝ Բարձրից ցածր</SelectItem>
+                <SelectItem value="name">Անուն</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -104,7 +112,7 @@ const Products = () => {
           </div>
         ) : (
           <div className="text-center py-20">
-            <p className="text-muted-foreground">No products found in this category.</p>
+            <p className="text-muted-foreground">Այս կատեգորիայում ապրանքներ չեն գտնվել։</p>
           </div>
         )}
       </div>

@@ -46,20 +46,20 @@ const Auth = () => {
     <div className="min-h-screen flex items-center justify-center py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-light mb-2">Welcome</h1>
-          <p className="text-muted-foreground">Sign in to continue shopping</p>
+          <h1 className="text-3xl font-light mb-2">Բարի գալուստ</h1>
+          <p className="text-muted-foreground">Մուտք գործեք շարունակելու համար</p>
         </div>
 
         <Tabs defaultValue="login" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="login">Login</TabsTrigger>
-            <TabsTrigger value="register">Register</TabsTrigger>
+            <TabsTrigger value="login">Մուտք</TabsTrigger>
+            <TabsTrigger value="register">Գրանցում</TabsTrigger>
           </TabsList>
 
           <TabsContent value="login">
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <Label htmlFor="login-email">Email</Label>
+                <Label htmlFor="login-email">Էլ․ փոստ</Label>
                 <Input
                   id="login-email"
                   type="email"
@@ -71,7 +71,7 @@ const Auth = () => {
                 />
               </div>
               <div>
-                <Label htmlFor="login-password">Password</Label>
+                <Label htmlFor="login-password">Գաղտնաբառ</Label>
                 <Input
                   id="login-password"
                   type="password"
@@ -83,7 +83,7 @@ const Auth = () => {
                 />
               </div>
               <Button type="submit" className="w-full btn-primary">
-                Login
+                Մուտք
               </Button>
             </form>
           </TabsContent>

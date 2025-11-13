@@ -8,35 +8,35 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-lg font-light tracking-wider">MILENA'S BOUTIQUE</h3>
+            <h3 className="text-lg font-light tracking-wider">ՄԻԼԵՆԱՅԻ ԲՈՒՏԻԿ</h3>
             <p className="text-sm text-muted-foreground">
-              Premium fashion for everyone. Quality clothing that speaks elegance.
+              Պրեմիում նորաձևություն բոլորի համար։ Որակյալ հագուստ, որը խոսում է էլեգանտությամբ։
             </p>
           </div>
 
           {/* Shop */}
           <div>
-            <h4 className="font-medium mb-4">Shop</h4>
+            <h4 className="font-medium mb-4">Խանութ</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/products?category=Women" className="hover:text-foreground transition-colors">Women</Link></li>
-              <li><Link to="/products?category=Men" className="hover:text-foreground transition-colors">Men</Link></li>
-              <li><Link to="/products?category=Kids" className="hover:text-foreground transition-colors">Kids</Link></li>
+              <li><Link to="/products?category=Women" className="hover:text-foreground transition-colors">Կանայք</Link></li>
+              <li><Link to="/products?category=Men" className="hover:text-foreground transition-colors">Տղամարդիկ</Link></li>
+              <li><Link to="/products?category=Kids" className="hover:text-foreground transition-colors">Երեխաներ</Link></li>
             </ul>
           </div>
 
           {/* Customer Service */}
           <div>
-            <h4 className="font-medium mb-4">Customer Service</h4>
+            <h4 className="font-medium mb-4">Սպասարկում</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact Us</Link></li>
-              <li><Link to="/profile" className="hover:text-foreground transition-colors">My Account</Link></li>
-              <li><Link to="/cart" className="hover:text-foreground transition-colors">Shopping Cart</Link></li>
+              <li><Link to="/contact" className="hover:text-foreground transition-colors">Կապ մեզ հետ</Link></li>
+              <li><Link to="/profile" className="hover:text-foreground transition-colors">Իմ էջը</Link></li>
+              <li><Link to="/cart" className="hover:text-foreground transition-colors">Զամբյուղ</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-medium mb-4">Contact</h4>
+            <h4 className="font-medium mb-4">Հասցե</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>Teryan 105, Yerevan</li>
               <li>+374 96 220 983</li>
@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Milena's Boutique. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Միլենայի բուտիկ։ Բոլոր իրավունքները պաշտպանված են։</p>
         </div>
       </div>
     </footer>

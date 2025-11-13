@@ -8,7 +8,7 @@ import { toast } from "sonner";
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you soon.");
+    toast.success("Հաղորդագրությունը ուղարկված է։ Մենք շուտով կպատասխանենք։");
   };
 
   return (
@@ -16,9 +16,9 @@ const Contact = () => {
       <div className="container-custom py-12">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-3xl font-light mb-4">Contact Us</h1>
+            <h1 className="text-3xl font-light mb-4">Կապ մեզ հետ</h1>
             <p className="text-muted-foreground">
-              We'd love to hear from you. Send us a message!
+              Մենք ուրախ կլինենք լսել Ձեզնից։ Ուղարկեք մեզ հաղորդագրություն։
             </p>
           </div>
 
@@ -26,9 +26,9 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-light mb-6">Get in Touch</h2>
+                <h2 className="text-2xl font-light mb-6">Կապ հաստատեք մեզ հետ</h2>
                 <p className="text-muted-foreground mb-8">
-                  Visit our store or reach out through any of these channels.
+                  Այցելեք մեր խանութ կամ կապ հաստատեք այս ուղիներով։
                 </p>
               </div>
 
@@ -38,10 +38,10 @@ const Contact = () => {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-medium mb-1">Store Address</h3>
+                    <h3 className="font-medium mb-1">Խանութի հասցե</h3>
                     <p className="text-muted-foreground">
-                      Teryan 105<br />
-                      Yerevan, Armenia
+                      Տերյան 105<br />
+                      Երևան, Հայաստան
                     </p>
                   </div>
                 </div>
@@ -51,7 +51,7 @@ const Contact = () => {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-medium mb-1">Phone</h3>
+                    <h3 className="font-medium mb-1">Հեռախոս</h3>
                     <p className="text-muted-foreground">+374 96 220 983</p>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ const Contact = () => {
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-medium mb-1">Email</h3>
+                    <h3 className="font-medium mb-1">Էլ․ փոստ</h3>
                     <p className="text-muted-foreground">
                       tovmasyanmilena2025@gmail.com
                     </p>
@@ -70,19 +70,19 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="font-medium mb-3">Store Hours</h3>
+                <h3 className="font-medium mb-3">Աշխատանքային ժամեր</h3>
                 <div className="space-y-2 text-muted-foreground text-sm">
                   <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span>10:00 AM - 8:00 PM</span>
+                    <span>Երկուշաբթի - Ուրբաթ</span>
+                    <span>10:00 - 20:00</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span>10:00 AM - 6:00 PM</span>
+                    <span>Շաբաթ</span>
+                    <span>10:00 - 18:00</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Sunday</span>
-                    <span>Closed</span>
+                    <span>Կիրակի</span>
+                    <span>Փակ</span>
                   </div>
                 </div>
               </div>

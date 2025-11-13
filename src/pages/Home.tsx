@@ -22,14 +22,14 @@ const Home = () => {
           <div className="container-custom">
             <div className="max-w-xl animate-fade-in">
               <h1 className="text-4xl md:text-6xl font-light text-white mb-4 tracking-tight">
-                New Season
+                Նոր Սեզոն
               </h1>
               <p className="text-lg text-white/90 mb-8">
-                Discover our latest collection of timeless pieces
+                Բացահայտեք մեր վերջին հավաքածուն անժամանակ կտորներով
               </p>
               <Link to="/products">
                 <Button size="lg" className="btn-primary">
-                  Shop Now
+                  Գնումներ
                 </Button>
               </Link>
             </div>
@@ -39,18 +39,18 @@ const Home = () => {
 
       {/* Categories Section */}
       <section className="container-custom py-20">
-        <h2 className="text-3xl font-light text-center mb-12">Shop by Category</h2>
+        <h2 className="text-3xl font-light text-center mb-12">Գնեք ըստ կատեգորիայի</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Link to="/products?category=Women" className="group relative overflow-hidden aspect-[4/5]">
             <img
               src={womenCollection}
-              alt="Women's Collection"
+              alt="Կանացի հավաքածու"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-end p-8">
               <div className="text-white">
-                <h3 className="text-3xl font-light mb-2">Women</h3>
-                <p className="text-sm">Explore collection</p>
+                <h3 className="text-3xl font-light mb-2">Կանայք</h3>
+                <p className="text-sm">Դիտել հավաքածուն</p>
               </div>
             </div>
           </Link>
@@ -58,13 +58,13 @@ const Home = () => {
           <Link to="/products?category=Men" className="group relative overflow-hidden aspect-[4/5]">
             <img
               src={menCollection}
-              alt="Men's Collection"
+              alt="Տղամարդկանց հավաքածու"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-end p-8">
               <div className="text-white">
-                <h3 className="text-3xl font-light mb-2">Men</h3>
-                <p className="text-sm">Explore collection</p>
+                <h3 className="text-3xl font-light mb-2">Տղամարդիկ</h3>
+                <p className="text-sm">Դիտել հավաքածուն</p>
               </div>
             </div>
           </Link>
@@ -73,7 +73,7 @@ const Home = () => {
         <div className="mt-8 text-center">
           <Link to="/products?category=Kids">
             <Button variant="outline" size="lg">
-              Kids Collection
+              Երեխաների հավաքածու
             </Button>
           </Link>
         </div>
@@ -82,7 +82,7 @@ const Home = () => {
       {/* New Arrivals */}
       <section className="bg-muted py-20">
         <div className="container-custom">
-          <h2 className="text-3xl font-light text-center mb-12">New Arrivals</h2>
+          <h2 className="text-3xl font-light text-center mb-12">Նոր ապրանքներ</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {newArrivals.map((product) => (
               <ProductCard key={product.id} product={product} />
@@ -91,7 +91,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link to="/products">
               <Button size="lg" variant="outline">
-                View All Products
+                Տեսնել բոլոր ապրանքները
               </Button>
             </Link>
           </div>

@@ -16,10 +16,10 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // Mock user data for demo
 const mockUser: User = {
   id: 1,
-  name: "Demo User",
+  name: "Ցուցադրական օգտատեր",
   email: "demo@milenasboutique.com",
   phone: "096220983",
-  address: "Teryan 105, Yerevan"
+  address: "Տերյան 105, Երևան"
 };
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -42,10 +42,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Mock login - in production, this would be an API call
     if (email && password) {
       setUser(mockUser);
-      toast.success("Login successful!");
+      toast.success("Մուտքը հաջողությամբ կատարվեց։");
       return true;
     }
-    toast.error("Invalid credentials");
+    toast.error("Անվավեր տվյալներ");
     return false;
   };
 
@@ -65,24 +65,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         address: ""
       };
       setUser(newUser);
-      toast.success("Registration successful!");
+      toast.success("Գրանցումը հաջողությամբ կատարվեց։");
       return true;
     }
-    toast.error("Registration failed");
+    toast.error("Գրանցումը ձախողվեց");
     return false;
   };
 
   const logout = () => {
     setUser(null);
     localStorage.removeItem("milenas-user");
-    toast.success("Logged out successfully");
+    toast.success("Դուրս եկաք համակարգից");
   };
 
   const updateProfile = (data: Partial<User>) => {
     if (user) {
       const updatedUser = { ...user, ...data };
       setUser(updatedUser);
-      toast.success("Profile updated successfully");
+      toast.success("Էջը թարմացվեց հաջողությամբ");
     }
   };
 

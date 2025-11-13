@@ -21,9 +21,9 @@ const ProductDetails = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light mb-4">Product not found</h1>
+          <h1 className="text-2xl font-light mb-4">Ապրանքը չի գտնվել</h1>
           <Link to="/products">
-            <Button variant="outline">Back to Products</Button>
+            <Button variant="outline">Վերադառնալ</Button>
           </Link>
         </div>
       </div>
@@ -36,11 +36,11 @@ const ProductDetails = () => {
 
   const handleAddToCart = () => {
     if (product.sizes && !selectedSize) {
-      alert("Please select a size");
+      alert("Խնդրում ենք ընտրել չափ");
       return;
     }
     if (product.colors && !selectedColor) {
-      alert("Please select a color");
+      alert("Խնդրում ենք ընտրել գույն");
       return;
     }
     addToCart(product, quantity, selectedSize, selectedColor);
@@ -56,7 +56,7 @@ const ProductDetails = () => {
           className="mb-8"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Back
+          Հետ
         </Button>
 
         {/* Product Details */}
@@ -86,7 +86,7 @@ const ProductDetails = () => {
             {product.sizes && product.sizes.length > 0 && (
               <div>
                 <label className="block text-sm font-medium mb-3">
-                  Select Size
+                  Ընտրել չափը
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {product.sizes.map((size) => (
@@ -107,7 +107,7 @@ const ProductDetails = () => {
             {product.colors && product.colors.length > 0 && (
               <div>
                 <label className="block text-sm font-medium mb-3">
-                  Select Color
+                  Ընտրել գույնը
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {product.colors.map((color) => (
@@ -126,7 +126,7 @@ const ProductDetails = () => {
             {/* Quantity */}
             <div>
               <label className="block text-sm font-medium mb-3">
-                Quantity
+                Քանակ
               </label>
               <div className="flex items-center gap-4">
                 <Button
@@ -146,7 +146,7 @@ const ProductDetails = () => {
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                {product.stock_quantity} items in stock
+                Պահեստում՝ {product.stock_quantity} հատ
               </p>
             </div>
 
@@ -156,7 +156,7 @@ const ProductDetails = () => {
               onClick={handleAddToCart}
               className="w-full btn-primary"
             >
-              Add to Cart
+              Ավելացնել զամբյուղ
             </Button>
           </div>
         </div>
@@ -164,7 +164,7 @@ const ProductDetails = () => {
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div>
-            <h2 className="text-2xl font-light mb-8">You May Also Like</h2>
+            <h2 className="text-2xl font-light mb-8">Կարող եք նաև հետաքրքրված լինել</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />

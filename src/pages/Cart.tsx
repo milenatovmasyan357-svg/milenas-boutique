@@ -10,12 +10,12 @@ const Cart = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light mb-4">Your cart is empty</h1>
+          <h1 className="text-2xl font-light mb-4">Ձեր զամբյուղը դատարկ է</h1>
           <p className="text-muted-foreground mb-8">
-            Start shopping to add items to your cart
+            Սկսեք գնումները՝ ապրանքներ ավելացնելու համար
           </p>
           <Link to="/products">
-            <Button size="lg">Continue Shopping</Button>
+            <Button size="lg">Շարունակել գնումները</Button>
           </Link>
         </div>
       </div>
@@ -25,7 +25,7 @@ const Cart = () => {
   return (
     <div className="min-h-screen">
       <div className="container-custom py-12">
-        <h1 className="text-3xl font-light mb-8">Shopping Cart</h1>
+        <h1 className="text-3xl font-light mb-8">Զամբյուղ</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
@@ -53,12 +53,12 @@ const Cart = () => {
                   </p>
                   {item.selectedSize && (
                     <p className="text-sm text-muted-foreground">
-                      Size: {item.selectedSize}
+                      Չափ՝ {item.selectedSize}
                     </p>
                   )}
                   {item.selectedColor && (
                     <p className="text-sm text-muted-foreground">
-                      Color: {item.selectedColor}
+                      Գույն՝ {item.selectedColor}
                     </p>
                   )}
                   <p className="font-medium mt-2">
@@ -97,7 +97,7 @@ const Cart = () => {
                       className="text-destructive hover:text-destructive"
                     >
                       <Trash2 className="h-4 w-4 mr-2" />
-                      Remove
+                      Հեռացնել
                     </Button>
                   </div>
                 </div>
@@ -114,20 +114,20 @@ const Cart = () => {
           {/* Order Summary */}
           <div>
             <div className="border border-border p-6 bg-card sticky top-24">
-              <h2 className="text-xl font-light mb-6">Order Summary</h2>
+              <h2 className="text-xl font-light mb-6">Պատվերի ամփոփում</h2>
 
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Subtotal</span>
+                  <span className="text-muted-foreground">Ենթագումար</span>
                   <span>${getCartTotal().toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Shipping</span>
-                  <span>Free</span>
+                  <span className="text-muted-foreground">Առաքում</span>
+                  <span>Անվճար</span>
                 </div>
                 <div className="border-t border-border pt-3">
                   <div className="flex justify-between font-medium text-lg">
-                    <span>Total</span>
+                    <span>Ընդամենը</span>
                     <span>${getCartTotal().toFixed(2)}</span>
                   </div>
                 </div>
@@ -135,13 +135,13 @@ const Cart = () => {
 
               <Link to="/checkout">
                 <Button size="lg" className="w-full btn-primary">
-                  Proceed to Checkout
+                  Անցնել վճարման
                 </Button>
               </Link>
 
               <Link to="/products">
                 <Button variant="outline" size="lg" className="w-full mt-4">
-                  Continue Shopping
+                  Շարունակել գնումները
                 </Button>
               </Link>
             </div>

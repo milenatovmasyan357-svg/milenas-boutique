@@ -25,7 +25,7 @@ const Checkout = () => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      toast.error("Please log in to continue");
+      toast.error("Խնդրում ենք մուտք գործել շարունակելու համար");
       navigate("/auth?redirect=/checkout");
     }
     if (cart.length === 0) {
@@ -42,12 +42,12 @@ const Checkout = () => {
     
     // Validate form
     if (!formData.fullName || !formData.email || !formData.phone || !formData.address) {
-      toast.error("Please fill in all required fields");
+      toast.error("Խնդրում ենք լրացնել բոլոր պարտադիր դաշտերը");
       return;
     }
 
     // Mock order placement
-    toast.success("Order placed successfully!");
+    toast.success("Պատվերը հաջողությամբ ուղարկված է։");
     clearCart();
     navigate("/profile");
   };
@@ -57,17 +57,17 @@ const Checkout = () => {
   return (
     <div className="min-h-screen">
       <div className="container-custom py-12">
-        <h1 className="text-3xl font-light mb-8">Checkout</h1>
+        <h1 className="text-3xl font-light mb-8">Վճարում</h1>
 
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Shipping Information */}
             <div className="lg:col-span-2 space-y-6">
               <div className="border border-border p-6 bg-card">
-                <h2 className="text-xl font-light mb-6">Shipping Information</h2>
+                <h2 className="text-xl font-light mb-6">Առաքման տեղեկություններ</h2>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="fullName">Full Name *</Label>
+                    <Label htmlFor="fullName">Անուն Ազգանուն *</Label>
                     <Input
                       id="fullName"
                       name="fullName"
@@ -78,7 +78,7 @@ const Checkout = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="email">Email *</Label>
+                      <Label htmlFor="email">Էլ․ փոստ *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -89,7 +89,7 @@ const Checkout = () => {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone">Phone *</Label>
+                      <Label htmlFor="phone">Հեռախոս *</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -101,7 +101,7 @@ const Checkout = () => {
                     </div>
                   </div>
                   <div>
-                    <Label htmlFor="address">Address *</Label>
+                    <Label htmlFor="address">Հասցե *</Label>
                     <Input
                       id="address"
                       name="address"

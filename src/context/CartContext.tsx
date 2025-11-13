@@ -33,7 +33,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       );
 
       if (existingItem) {
-        toast.success("Cart updated");
+        toast.success("Զամբյուղը թարմացվեց");
         return prevCart.map(item =>
           item.product.id === product.id && 
           item.selectedSize === size && 
@@ -43,14 +43,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         );
       }
 
-      toast.success("Added to cart");
+      toast.success("Ավելացվեց զամբյուղ");
       return [...prevCart, { product, quantity, selectedSize: size, selectedColor: color }];
     });
   };
 
   const removeFromCart = (productId: number) => {
     setCart(prevCart => prevCart.filter(item => item.product.id !== productId));
-    toast.success("Removed from cart");
+    toast.success("Հեռացվեց զամբյուղից");
   };
 
   const updateQuantity = (productId: number, quantity: number) => {
